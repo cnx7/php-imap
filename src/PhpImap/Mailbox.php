@@ -1453,6 +1453,8 @@ class Mailbox
             case 'utf-8': // Charset UTF-8 is OK
                 $newString .= $string;
                 break;
+            case 'ks_c_5601-1987':
+                $fromCharset = 'euc-kr';
             default:
                 // If charset exists in mb_list_encodings(), convert using mb_convert function
                 if (\in_array($fromCharset, $this->lowercase_mb_list_encodings(), true)) {
